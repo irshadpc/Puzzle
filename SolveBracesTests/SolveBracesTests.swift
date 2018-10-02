@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import SolveBraces
+//@testable ViewController
 
 class SolveBracesTests: XCTestCase {
     
@@ -31,6 +32,20 @@ class SolveBracesTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testSucess()  {
+        let array:[Character] = ["(", "{","}",")"]
+        let  viewObj = ViewController()
+        XCTAssertEqual(viewObj.isBalanced(sequence: array),true)
+        
+    }
+    
+    func testfailure()  {
+        let array:[Character] = ["}",")","(", "{"]
+        let  viewObj = ViewController()
+        XCTAssertEqual(viewObj.isBalanced(sequence: array),false)
+        
     }
     
 }
